@@ -87,10 +87,6 @@ h4 {
     color: #00A676; 
 }
 
-.logo {
-    width: 150px;
-}
-
-.icon {
+.logo, .icon {
     width: 80px;
 }
