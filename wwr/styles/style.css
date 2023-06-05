@@ -270,14 +270,17 @@ nav a {
         flex-direction: column;
     }
     nav a {
+        height: 7px;
         display: block;
         padding: 15px;
+        font-size: .85em;
     }
     #hero {
         margin-top: 0;
     }
     #hero-msg {
-        margin-top: 0;
+        margin-top: -75px;
+        margin-bottom: 150px;
     }
     #hero-msg h4 {
         display: none;
