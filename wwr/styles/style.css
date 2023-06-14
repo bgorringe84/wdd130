@@ -183,6 +183,10 @@ nav a {
     font-size: 1.3em;
 }
 
+.active {
+    color:whitesmoke
+}
+
 .icon {
     padding-top: 10px;
 }
@@ -244,12 +248,12 @@ nav a {
 }
 
 .mountains {
-    grid-column: 2/7;
-    grid-row: 5/8;
-    width: 100%;
-    grid-column: 2/7;
-    grid-row: 5/8;
-    box-shadow: 5px 5px 10px #6f7364;
+    display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      padding: 1em;
 }
 
 .msg {
@@ -261,6 +265,49 @@ nav a {
     box-shadow: 5px 5px 10px #6f7364;
 }
 
+.rivers-page {
+    margin: 0;
+    padding: 0;
+    width: 80%;
+    margin: 20px auto;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .rivers-page .river-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "text image";
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .rivers-page .river-container:nth-child(even) {
+    grid-template-areas: "image text";
+  }
+  
+  .rivers-page .river-container div {
+    grid-area: text;
+  }
+  
+  .rivers-page .river-container h2 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .rivers-page .river-container p {
+    margin-bottom: 10px;
+  }
+  
+  .rivers-page .river-container img {
+    width: 100%;
+    height: auto;
+    grid-area: image;
+  }
+  
 @media screen and (max-width: 900px) {
     #hero, .home-grid {
         display: block;
@@ -304,4 +351,11 @@ nav a {
     footer {
         margin-top: 25px;
     }
+  .rivers-page .river-container,
+  .rivers-page .river-container:nth-child(even) {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "image"
+      "text";
+  }
 }
