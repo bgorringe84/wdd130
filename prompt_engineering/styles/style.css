@@ -147,10 +147,16 @@ nav a:link, nav a:visited {
   bottom: 5px;
   left: 0;
   padding: 10px;
-  backdrop-filter: blur(1000px);
-  color: var(--accent3-color);
+  backdrop-filter: blur(20px);
+  color: var(--accent1-color);
   text-decoration: none;
   font-size: 14px;
+}
+
+.img-tag a:hover {
+  background-color: black;
+  color: white;
+  backdrop-filter: none;
 }
 
 #introduction {
@@ -167,7 +173,8 @@ nav a:link, nav a:visited {
 #what-container h1,
 #mission-statment h1,
 #Happy_Learning_container h1,
-#tutorial-catagories-container {
+#tutorial-catagories-container,
+.article-container h1 {
   font-family: var(--heading-font);
   color: var(--accent3-color);
 }
@@ -185,7 +192,9 @@ nav a:link, nav a:visited {
 #introduction-container p,
 #what-container p,
 #mission-statment p,
-#Happy_Learning_container p{
+#Happy_Learning_container p,
+.article-container p,
+.article-container li{
   font-family: var(--paragraph-font);
 }
 
@@ -231,6 +240,7 @@ nav a:link, nav a:visited {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr, 4fr;
   gap: 1.5em;
+  margin-bottom: 2em;
 }
 
 #tutorial-catagories-container h1{
@@ -240,4 +250,57 @@ nav a:link, nav a:visited {
 
 .badge-img {
   margin: auto;
+}
+
+.tutorials {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5em;
+  text-align: left;
+}
+
+.article-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4em;
+  align-items: center;
+  justify-items: center;
+  padding: 1.5em;
+}
+
+.tutorials article:nth-child(odd) {
+  background-color: var(--accent2-color);
+  border-radius: 15px;
+}
+
+.tutorials article:nth-child(even) .article-container {
+  direction: rtl;
+}
+
+.tutorials article:nth-child(even) .article-container ul{
+  background-color: var(--accent2-color);
+}
+
+.tutorials article:nth-child(even) .article-container > div {
+  direction: ltr;
+}
+
+.article-container ul {
+  list-style-type: none;
+  background-color: white;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+strong {
+  color: var(--accent3-color);
+}
+
+hr {
+  height: 2px;
+  background-color: var(--accent3-color);
+}
+
+#Happy_Learning_container {
+  margin: 3em 7em;
 }
