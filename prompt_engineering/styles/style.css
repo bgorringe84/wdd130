@@ -238,7 +238,7 @@ nav a:link, nav a:visited {
 #tutorial-catagories-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr, 4fr;
+  grid-template-rows: 1fr 4fr;
   gap: 1.5em;
   margin-bottom: 2em;
 }
