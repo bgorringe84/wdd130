@@ -1,35 +1,29 @@
-/* if you are using any Google fonts change the font names below to your fonts. 
-Any spaces in your font name should be replaced with a +. 
-Fonts are separated by a | */
 @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
 :root {
-  /* change the values below to your colors from your palette */
-  --primary-color: #353535   ;
+
+  --primary-color: #353535;
   --secondary-color: #3C6E71 ;
   --accent1-color: #FFFFFF;
   --accent2-color: #D9D9D9;
   --accent3-color: #284B63;
 
-  /* change the values below to your chosen font(s) */
+ 
   --heading-font: "Orbitron";
   --paragraph-font: "Prompt", Lato, Helvetica, sans-serif;
 
-  /* these colors below should be chosen from among your palette colors above */
-  --headline-color-on-white: var(--secondary-color);   /*headlines on a white background */ 
-  --headline-color-on-color: var(--accent1-color); /* headlines on a colored background */ 
-  --paragraph-color-on-white: var(--primary-color); /* paragraph text on a white background */ 
-  --paragraph-color-on-color: var(--accent2-color); /* paragraph text on a colored background */ 
+
+  --headline-color-on-white: var(--secondary-color);
+  --headline-color-on-color: var(--accent1-color);
+  --paragraph-color-on-white: var(--primary-color);
+  --paragraph-color-on-color: var(--accent2-color); 
   --paragraph-background-color: var(--accent2-color);
   --nav-link-color: var(--accent2-color);
   --nav-background-color: var(--primary-color);
   --nav-hover-link-color: var(--accent3-color);
   --nav-hover-background-color: var(--accent1-color);
 }
-
-
-/*  Look around below...but DON'T CHANGE ANYTHING! */
 
 body {
   max-width: 1200px;
@@ -151,10 +145,11 @@ nav a:link, nav a:visited {
   color: var(--accent1-color);
   text-decoration: none;
   font-size: 14px;
+  transition: background-color 0.3s ease-in-out;
 }
 
-.img-tag a:hover {
-  background-color: black;
+.img-tag:hover {
+  background-color: var(--accent3-color);
   color: white;
   backdrop-filter: none;
 }
@@ -174,7 +169,10 @@ nav a:link, nav a:visited {
 #mission-statment h1,
 #Happy_Learning_container h1,
 #tutorial-catagories-container,
-.article-container h1 {
+.article-container h1,
+#case_studies_intro h1,
+#case_studies_intro h2,
+.Exploring h1 {
   font-family: var(--heading-font);
   color: var(--accent3-color);
 }
@@ -194,7 +192,9 @@ nav a:link, nav a:visited {
 #mission-statment p,
 #Happy_Learning_container p,
 .article-container p,
-.article-container li{
+.article-container li,
+#case_studies_intro p,
+.Exploring p {
   font-family: var(--paragraph-font);
 }
 
@@ -250,13 +250,20 @@ nav a:link, nav a:visited {
 
 .badge-img {
   margin: auto;
+  transition: transform 0.3s ease-in-out;
 }
 
-.tutorials {
+.badge-img:hover {
+  transform: scale(1.2);
+}
+
+.tutorials,
+.case-studies-articles {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5em;
   text-align: left;
+  margin: 1em;
 }
 
 .article-container {
@@ -273,15 +280,21 @@ nav a:link, nav a:visited {
   border-radius: 15px;
 }
 
-.tutorials article:nth-child(even) .article-container {
+.tutorials article:nth-child(even) .article-container,
+.case-studies-articles article:nth-child(even) .article-container {
   direction: rtl;
 }
 
-.tutorials article:nth-child(even) .article-container ul{
+.case-studies-articles article:nth-child(even) .article-container {
   background-color: var(--accent2-color);
 }
 
-.tutorials article:nth-child(even) .article-container > div {
+.tutorials article:nth-child(even) .article-container ul {
+  background-color: var(--accent2-color);
+}
+
+.tutorials article:nth-child(even) .article-container > div,
+.case-studies-articles article:nth-child(even) .article-container > div {
   direction: ltr;
 }
 
@@ -301,6 +314,44 @@ hr {
   background-color: var(--accent3-color);
 }
 
-#Happy_Learning_container {
+#Happy_Learning_container,
+.Exploring {
   margin: 3em 7em;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url('../images/case_study3.png');
+
+  /* Full height */
+  height: 175px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#case_studies_intro {
+  background-image: url('../images/case_study3.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#case-studies-intro-text-container {
+  margin: 4em;
+  backdrop-filter: blur(35px);
+  border: solid 2px var(--accent3-color);
+  border-radius: 15px;
+}
+
+#case-studies-intro-text-container p {
+  color: #FFFFFF;
+}
+
+.case-study-img {
+  width: 350px;
 }
